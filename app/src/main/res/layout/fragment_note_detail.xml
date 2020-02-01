@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ContentDescription"
+    tools:context=".note.NoteActivity">
+
+    <FrameLayout
+        android:id="@+id/tlb_detail_fragment"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/colorTransparentBlack"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/imb_toolbar_delete"
+            style="@style/Widget.AppCompat.ActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginEnd="74dp"
+            android:src="@drawable/ic_delete_forever_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/imb_toolbar_done"
+            style="@style/Widget.AppCompat.ActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_done_black_24dp" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imv_note_detail_satellite"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:alpha=".86"
+        android:src="@drawable/rocket_loop"
+        app:layout_constraintBottom_toTopOf="@+id/gdl_detail_middle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlb_detail_fragment"
+
+        />
+
+    <TextView
+        android:id="@+id/lbl_note_detail_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edt_note_detail_text"
+        android:background="@color/colorTransparentBlack"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gdl_detail_middle"
+        tools:text="2:43AM 09/7/2018" />
+
+    <EditText
+        android:id="@+id/edt_note_detail_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorTransparentBlack"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:padding="16dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_note_detail_date"
+        tools:ignore="Autofill,LabelFor"
+        tools:text="" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdl_detail_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

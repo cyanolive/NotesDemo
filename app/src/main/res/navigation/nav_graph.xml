@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/noteListView">
+    <fragment
+        android:id="@+id/noteDetailView"
+        android:name="com.example.notesdemo.note.notedetail.NoteDetailView"
+        android:label="NoteDetailView"
+        tools:layout="@layout/fragment_note_detail" >
+        <action
+            android:id="@+id/action_noteDetailView_to_noteListView"
+            app:destination="@id/noteListView" />
+        <argument
+            android:name="noteid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteListView"
+        android:name="com.example.notesdemo.note.notelist.NoteListView"
+        android:label="NoteListView"
+        tools:layout="@layout/fragment_note_list" >
+        <action
+            android:id="@+id/action_noteListView_to_noteDetailView"
+            app:destination="@id/noteDetailView" />
+        <action
+            android:id="@+id/action_noteListView_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.notesdemo.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/fragment_login" />
+</navigation>
