@@ -13,7 +13,7 @@
             android:id="@+id/action_noteDetailView_to_noteListView"
             app:destination="@id/noteListView" />
         <argument
-            android:name="noteid"
+            android:name="creationDate"
             app:argType="string" />
     </fragment>
     <fragment
