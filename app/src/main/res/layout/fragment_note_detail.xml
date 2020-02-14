@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frag_note_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="ContentDescription"
+    android:background="@drawable/space_loop"
     tools:context=".note.NoteActivity">
 
     <FrameLayout
@@ -30,6 +31,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="end"
             android:layout_marginEnd="74dp"
+            android:contentDescription="Delete Button"
             android:src="@drawable/ic_delete_forever_black_24dp" />
 
         <ImageButton
@@ -38,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"
+            android:contentDescription="Finish Editing Note Button"
             android:src="@drawable/ic_done_black_24dp" />
 
     </FrameLayout>
@@ -89,7 +92,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lbl_note_detail_date"
-        tools:ignore="Autofill,LabelFor"
         tools:text="" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -98,4 +100,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
