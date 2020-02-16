@@ -1,6 +1,7 @@
 package com.example.notesdemo.common
 
 import android.text.Editable
+import com.example.notesdemo.model.FirebaseNote
 import com.example.notesdemo.model.Note
 import com.example.notesdemo.model.RoomNote
 import com.example.notesdemo.model.User
@@ -37,6 +38,24 @@ internal val FirebaseUser.toUser: User
     get() = User(
         uid = this.uid,
         name = this.displayName ?: ""
+    )
+
+internal val FirebaseNote.toNote: Note
+    get() = Note(
+        this.creationDate ?: "",
+        this.contents ?: "",
+        this.upVotes ?: 0,
+        this.imageUrl ?: "",
+        User(this.creator ?: "")
+    )
+
+internal val Note.toFirebaseNote: FirebaseNote
+    get() = FirebaseNote(
+        this.creationDate,
+        this.contents,
+        this.upVotes,
+        this.imageUrl,
+        this.safeGetUid
     )
 
 internal val RoomNote.toNote: Note
